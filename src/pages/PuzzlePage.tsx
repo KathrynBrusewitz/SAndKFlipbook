@@ -4,8 +4,20 @@ import classNames from "classnames";
 import WordleGame from "../wordle/WordleGame";
 import Div100vh from "react-div-100vh";
 
-const MarryPuzzle = () => {
-  const { setPageIndex } = useAppContext();
+interface PuzzlePageProps {
+  solution: string;
+  introIllustration: JSX.Element;
+  solvedIllustration: JSX.Element;
+  lastPage?: boolean;
+}
+
+const PuzzlePage = ({
+  solution,
+  introIllustration,
+  solvedIllustration,
+  lastPage = false,
+}: PuzzlePageProps) => {
+  const { pageIndex, setPageIndex } = useAppContext();
   const [intro, setIntro] = useState(false);
   const [showWordle, setShowWordle] = useState(false);
   const [showWordleWin, setShowWordleWin] = useState(false);
@@ -19,7 +31,7 @@ const MarryPuzzle = () => {
   function handleKeyEvent(e: KeyboardEvent) {
     if (e.code === "ArrowLeft") {
       if (intro) {
-        setPageIndex(2);
+        setPageIndex(pageIndex - 1);
       }
       if (showWordle || showWordleWin) {
         setIntro(true);
@@ -27,11 +39,16 @@ const MarryPuzzle = () => {
         setShowWordleWin(false);
       }
     }
+
     if (e.code === "ArrowRight") {
       if (intro) {
         setIntro(false);
         setShowWordle(true);
         setShowWordleWin(false);
+      }
+
+      if (showWordleWin && !lastPage) {
+        setPageIndex(pageIndex + 1);
       }
     }
   }
@@ -48,26 +65,22 @@ const MarryPuzzle = () => {
       <div className="main-wrapper">
         {intro && (
           <div className={classNames({ "fade-in": intro })}>
-            <h1>Show illustration leading up to wordle 3</h1>
+            {introIllustration}
           </div>
         )}
         {showWordle && (
           <WordleGame
-            solution="MARRY"
+            solution={solution}
             onWin={() => {
               setShowWordle(false);
               setShowWordleWin(true);
             }}
           />
         )}
-        {showWordleWin && (
-          <div>
-            <h1>Will you marry me?</h1>
-          </div>
-        )}
+        {showWordleWin && <div>{solvedIllustration}</div>}
       </div>
     </Div100vh>
   );
 };
 
-export default MarryPuzzle;
+export default PuzzlePage;
