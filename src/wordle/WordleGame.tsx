@@ -7,7 +7,11 @@ import Div100vh from "react-div-100vh";
 import { AlertContainer } from "./components/alerts/AlertContainer";
 import { Grid } from "./components/grid/Grid";
 import { Keyboard } from "./components/keyboard/Keyboard";
-import { MAX_CHALLENGES, REVEAL_TIME_MS } from "./constants/settings";
+import {
+  ALERT_TIME_MS,
+  MAX_CHALLENGES,
+  REVEAL_TIME_MS,
+} from "./constants/settings";
 import {
   CORRECT_WORD_MESSAGE,
   NOT_ENOUGH_LETTERS_MESSAGE,
@@ -19,6 +23,7 @@ import {
   localeAwareUpperCase,
   unicodeLength,
 } from "./lib/words";
+import { useAppContext } from "../context/AppContext";
 
 interface WordleProps {
   solution: string;
@@ -26,6 +31,7 @@ interface WordleProps {
 }
 
 function WordleGame(props: WordleProps) {
+  const { saveGameState, loadGameState } = useAppContext();
   const solution = localeAwareUpperCase(props.solution);
   const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
     useAlert();
@@ -34,7 +40,24 @@ function WordleGame(props: WordleProps) {
   const [currentRowClass, setCurrentRowClass] = useState("");
   const [isGameLost, setIsGameLost] = useState(false);
   const [isRevealing, setIsRevealing] = useState(false);
-  const [guesses, setGuesses] = useState<string[]>([]);
+  const [guesses, setGuesses] = useState<string[]>(() => {
+    const loaded = loadGameState(solution);
+    if (!loaded) {
+      return [];
+    }
+    const gameWasWon = loaded.includes(solution);
+    if (gameWasWon) {
+      setIsGameWon(true);
+    }
+    const gameWasLost = loaded.length === MAX_CHALLENGES && !gameWasWon;
+    if (gameWasLost) {
+      setIsGameLost(true);
+      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+        durationMs: ALERT_TIME_MS,
+      });
+    }
+    return loaded;
+  });
 
   const clearCurrentRowClass = () => {
     setCurrentRowClass("");
@@ -44,11 +67,7 @@ function WordleGame(props: WordleProps) {
   };
 
   useEffect(() => {
-    // TODO: save game state to context
-    // saveGameStateToLocalStorage(
-    //   true,
-    //   { guesses, solution }
-    // );
+    saveGameState(solution, guesses);
   }, [guesses]);
 
   useEffect(() => {

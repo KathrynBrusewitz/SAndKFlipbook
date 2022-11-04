@@ -69,15 +69,21 @@ const PuzzlePage = ({
           </div>
         )}
         {showWordle && (
-          <WordleGame
-            solution={solution}
-            onWin={() => {
-              setShowWordle(false);
-              setShowWordleWin(true);
-            }}
-          />
+          <div className={classNames({ "fade-in": showWordle })}>
+            <WordleGame
+              solution={solution}
+              onWin={() => {
+                setShowWordle(false);
+                setShowWordleWin(true);
+              }}
+            />
+          </div>
         )}
-        {showWordleWin && <div>{solvedIllustration}</div>}
+        {showWordleWin && (
+          <div className={classNames({ "fade-in": showWordleWin })}>
+            {solvedIllustration}
+          </div>
+        )}
       </div>
     </Div100vh>
   );

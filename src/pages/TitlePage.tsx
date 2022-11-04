@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext";
 import classNames from "classnames";
 
 const TitlePage = () => {
-  const { setPageIndex } = useAppContext();
+  const { setPageIndex, resetGameState } = useAppContext();
   const [intro, setIntro] = useState(false);
   const [exit, setExit] = useState(false);
 
@@ -12,7 +12,7 @@ const TitlePage = () => {
 
     setTimeout(() => {
       setIntro(false);
-    }, 3000);
+    }, 2000);
   }, []);
 
   function handleKeyEvent(e: KeyboardEvent) {
@@ -22,7 +22,7 @@ const TitlePage = () => {
       // Go to next page after animation finishes
       setTimeout(() => {
         setPageIndex(1);
-      }, 3000);
+      }, 2000);
     }
   }
 
@@ -41,6 +41,7 @@ const TitlePage = () => {
       })}
     >
       <h1>Use the arrow keys to navigate</h1>
+      <button onClick={resetGameState}>Reset</button>
     </div>
   );
 };
