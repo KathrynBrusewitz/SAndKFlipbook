@@ -1,53 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
-import classNames from "classnames";
 import WordleGame from "../wordle/WordleGame";
-import Div100vh from "react-div-100vh";
+import classNames from "classnames";
 
 interface PuzzlePageProps {
   solution: string;
-  introIllustration: JSX.Element;
-  solvedIllustration: JSX.Element;
-  lastPage?: boolean;
 }
 
-const PuzzlePage = ({
-  solution,
-  introIllustration,
-  solvedIllustration,
-  lastPage = false,
-}: PuzzlePageProps) => {
+const PuzzlePage = ({ solution }: PuzzlePageProps) => {
   const { pageIndex, setPageIndex } = useAppContext();
-  const [intro, setIntro] = useState(false);
-  const [showWordle, setShowWordle] = useState(false);
-  const [showWordleWin, setShowWordleWin] = useState(false);
-
-  useEffect(() => {
-    setIntro(true);
-    setShowWordle(false);
-    setShowWordleWin(false);
-  }, []);
+  const [wordleWon, setWordleWon] = useState(false);
 
   function handleKeyEvent(e: KeyboardEvent) {
     if (e.code === "ArrowLeft") {
-      if (intro) {
-        setPageIndex(pageIndex - 1);
-      }
-      if (showWordle || showWordleWin) {
-        setIntro(true);
-        setShowWordle(false);
-        setShowWordleWin(false);
-      }
+      setPageIndex(pageIndex - 1);
     }
 
     if (e.code === "ArrowRight") {
-      if (intro) {
-        setIntro(false);
-        setShowWordle(true);
-        setShowWordleWin(false);
-      }
-
-      if (showWordleWin && !lastPage) {
+      if (wordleWon) {
         setPageIndex(pageIndex + 1);
       }
     }
@@ -61,31 +31,16 @@ const PuzzlePage = ({
   }, [handleKeyEvent]);
 
   return (
-    <Div100vh>
-      <div className="main-wrapper">
-        {intro && (
-          <div className={classNames({ "fade-in": intro })}>
-            {introIllustration}
-          </div>
-        )}
-        {showWordle && (
-          <div className={classNames({ "fade-in": showWordle })}>
-            <WordleGame
-              solution={solution}
-              onWin={() => {
-                setShowWordle(false);
-                setShowWordleWin(true);
-              }}
-            />
-          </div>
-        )}
-        {showWordleWin && (
-          <div className={classNames({ "fade-in": showWordleWin })}>
-            {solvedIllustration}
-          </div>
-        )}
+    <div className="main-wrapper">
+      <div className={classNames("fade-in")}>
+        <WordleGame
+          solution={solution}
+          onWin={() => {
+            setWordleWon(true);
+          }}
+        />
       </div>
-    </Div100vh>
+    </div>
   );
 };
 

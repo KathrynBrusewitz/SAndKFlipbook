@@ -6,6 +6,7 @@ import TitlePage from "./pages/TitlePage";
 import PageContainer from "./pages/PageContainer";
 import { Box, Grid } from "@mui/material";
 import Green from "./pages/components/Green";
+import PuzzlePage from "./pages/PuzzlePage";
 
 function App() {
   const { pageIndex } = useAppContext();
@@ -54,6 +55,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
+    <PuzzlePage solution="MATCH" />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -74,6 +76,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
+    <PuzzlePage solution="PHONE" />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -98,6 +101,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
+    <PuzzlePage solution="TACOS" />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -118,6 +122,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
+    <PuzzlePage solution="LATTE" />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -139,6 +144,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
+    <PuzzlePage solution="WORLD" />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -159,6 +165,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
+    <PuzzlePage solution="MARRY" />,
     <PageContainer lastPage>
       <Grid container direction="column" alignItems="center">
         <Grid item textAlign="center">
