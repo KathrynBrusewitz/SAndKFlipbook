@@ -1,9 +1,9 @@
 import React from "react";
-import { useAppContext } from "../context/AppContext";
 import { Box, Grid } from "@mui/material";
+import { useAppContext } from "../context/AppContext";
 
 const TitlePage = () => {
-  const { resetGameState } = useAppContext();
+  const { resetGameState, gameStateExists } = useAppContext();
 
   return (
     <Grid
@@ -17,9 +17,11 @@ const TitlePage = () => {
           <h1>Dear Siobhan,</h1>
         </Box>
       </Grid>
-      <Grid item>
-        <button onClick={resetGameState}>Reset</button>
-      </Grid>
+      {gameStateExists && (
+        <Grid item>
+          <button onClick={resetGameState}>Reset</button>
+        </Grid>
+      )}
     </Grid>
   );
 };

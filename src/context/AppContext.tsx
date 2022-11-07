@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { createContainer } from "unstated-next";
-
-export const PageStorageKey = "page";
+import {
+  loadGameStorage,
+  PageStorageKey,
+  resetGameStorage,
+  saveGameStorage,
+  gameStateExistsStorage,
+} from "./GameStateStorage";
 
 function appContext() {
   const [pageIndex, setPageIndex] = useState<number>(() => {
@@ -9,17 +14,22 @@ function appContext() {
     return pageState ? (JSON.parse(pageState) as number) : 0;
   });
 
+  const [gameStateExists, setGameStateExists] = useState<boolean>(() => {
+    return gameStateExistsStorage;
+  });
+
   const saveGameState = (key: string, guesses: string[]) => {
-    localStorage.setItem(key, JSON.stringify(guesses));
+    saveGameStorage(key, guesses);
+    setGameStateExists(true);
   };
 
   const loadGameState = (key: string) => {
-    const state = localStorage.getItem(key);
-    return state ? (JSON.parse(state) as string[]) : null;
+    return loadGameStorage(key);
   };
 
   const resetGameState = () => {
-    localStorage.clear();
+    resetGameStorage();
+    setGameStateExists(false);
   };
 
   return {
@@ -28,6 +38,7 @@ function appContext() {
     saveGameState,
     loadGameState,
     resetGameState,
+    gameStateExists,
   };
 }
 

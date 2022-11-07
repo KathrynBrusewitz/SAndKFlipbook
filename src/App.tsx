@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
-import { PageStorageKey, useAppContext } from "./context/AppContext";
+import { useAppContext } from "./context/AppContext";
 import TitlePage from "./pages/TitlePage";
 import PageContainer from "./pages/PageContainer";
 import { Box, Grid } from "@mui/material";
 import Green from "./pages/components/Green";
 import PuzzlePage from "./pages/PuzzlePage";
+import { saveCurrentPage, Solutions } from "./context/GameStateStorage";
 
 function App() {
   const { pageIndex } = useAppContext();
 
   useEffect(() => {
-    // Save current page
-    localStorage.setItem(PageStorageKey, JSON.stringify(pageIndex));
+    saveCurrentPage(pageIndex);
   }, [pageIndex]);
 
   const pages: Array<JSX.Element> = [
@@ -53,7 +53,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
-    <PuzzlePage solution="MATCH" />,
+    <PuzzlePage solution={Solutions[0]} />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -74,7 +74,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
-    <PuzzlePage solution="PHONE" />,
+    <PuzzlePage solution={Solutions[1]} />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -99,7 +99,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
-    <PuzzlePage solution="TACOS" />,
+    <PuzzlePage solution={Solutions[2]} />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -120,7 +120,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
-    <PuzzlePage solution="LATTE" />,
+    <PuzzlePage solution={Solutions[3]} />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -142,7 +142,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
-    <PuzzlePage solution="WORLD" />,
+    <PuzzlePage solution={Solutions[4]} />,
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
@@ -163,7 +163,7 @@ function App() {
         </Grid>
       </Grid>
     </PageContainer>,
-    <PuzzlePage solution="MARRY" />,
+    <PuzzlePage solution={Solutions[5]} />,
     <PageContainer lastPage>
       <Grid container direction="column" alignItems="center">
         <Grid item textAlign="center">
