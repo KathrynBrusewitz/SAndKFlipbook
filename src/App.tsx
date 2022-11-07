@@ -1,5 +1,3 @@
-import "./style.css";
-
 import React, { useEffect } from "react";
 import { PageStorageKey, useAppContext } from "./context/AppContext";
 import TitlePage from "./pages/TitlePage";

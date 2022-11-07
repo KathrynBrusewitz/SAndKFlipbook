@@ -13,3 +13,26 @@ p {
 h1 {
   font-size: 48px;
 }
+
+.fade-out {
+  animation: fadeOut 2s;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.main-wrapper {
+  text-align: center;
+  margin: 0 auto;
+}

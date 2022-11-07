@@ -1,5 +1,16 @@
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    h1 {
+        font-size: 64px;
+    }
+    p {
+        font-size: 32px;
+    }
+}
+
 
 .game :root {
     --animation-speed: 1000ms;
@@ -10,14 +21,6 @@
     --absent-cell-bg-color: theme('colors.slate.400');
     --correct-cell-bg-color: theme('colors.green.400');
     --present-cell-bg-color: theme('colors.yellow.400');
-}
-
-.game *,
-.game ::before,
-.game ::after {
-    border-width: 0;
-    border-style: solid;
-    border-color: theme('borderColor.default', currentColor);
 }
 
 .game .dark {
