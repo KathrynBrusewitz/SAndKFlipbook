@@ -31,7 +31,11 @@ const PageContainer = (props: React.PropsWithChildren<PageContainerProps>) => {
     };
   }, [handleKeyEvent]);
 
-  return <Box p={4}>{props.children}</Box>;
+  return (
+    <Box p={4} className="fade-in">
+      {props.children}
+    </Box>
+  );
 };
 
 export default PageContainer;

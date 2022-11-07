@@ -19,7 +19,7 @@ const TitlePage = () => {
       </Grid>
       {gameStateExists && (
         <Grid item>
-          <button onClick={resetGameState}>Reset</button>
+          <button onClick={resetGameState}>Reset Flipbook</button>
         </Grid>
       )}
     </Grid>
