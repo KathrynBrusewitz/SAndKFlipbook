@@ -7,13 +7,8 @@ import Div100vh from "react-div-100vh";
 import { AlertContainer } from "./components/alerts/AlertContainer";
 import { Grid } from "./components/grid/Grid";
 import { Keyboard } from "./components/keyboard/Keyboard";
+import { MAX_CHALLENGES, REVEAL_TIME_MS } from "./constants/settings";
 import {
-  ALERT_TIME_MS,
-  MAX_CHALLENGES,
-  REVEAL_TIME_MS,
-} from "./constants/settings";
-import {
-  CORRECT_WORD_MESSAGE,
   NOT_ENOUGH_LETTERS_MESSAGE,
   WORD_NOT_FOUND_MESSAGE,
 } from "./constants/strings";
@@ -28,6 +23,7 @@ import { useAppContext } from "../context/AppContext";
 interface WordleProps {
   solution: string;
   onWin: () => void;
+  onLose: () => void;
 }
 
 function WordleGame(props: WordleProps) {
@@ -52,9 +48,6 @@ function WordleGame(props: WordleProps) {
     const gameWasLost = loaded.length === MAX_CHALLENGES && !gameWasWon;
     if (gameWasLost) {
       setIsGameLost(true);
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-        durationMs: ALERT_TIME_MS,
-      });
     }
     return loaded;
   });
@@ -77,7 +70,7 @@ function WordleGame(props: WordleProps) {
 
     if (isGameLost) {
       setTimeout(() => {
-        // showErrorAlert("you lost :("); // TODO: show button to start over
+        props.onLose();
       }, (solution.length + 1) * REVEAL_TIME_MS);
     }
   }, [isGameWon, isGameLost, showSuccessAlert]);
@@ -140,10 +133,6 @@ function WordleGame(props: WordleProps) {
 
       if (guesses.length === MAX_CHALLENGES - 1) {
         setIsGameLost(true);
-        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-          persist: true,
-          delayMs: REVEAL_TIME_MS * solution.length + 1,
-        });
       }
     }
   };

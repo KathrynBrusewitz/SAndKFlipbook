@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import WordleGame from "../wordle/WordleGame";
 import classNames from "classnames";
+import { Grid } from "@mui/material";
 
 interface PuzzlePageProps {
   solution: string;
@@ -10,6 +11,12 @@ interface PuzzlePageProps {
 const PuzzlePage = ({ solution }: PuzzlePageProps) => {
   const { pageIndex, setPageIndex } = useAppContext();
   const [wordleWon, setWordleWon] = useState(false);
+  const [wordleLost, setWordleLost] = useState(false);
+
+  function restartGame() {
+    localStorage.removeItem(solution);
+    setWordleLost(false);
+  }
 
   function handleKeyEvent(e: KeyboardEvent) {
     if (e.code === "ArrowLeft") {
@@ -31,15 +38,34 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
   }, [handleKeyEvent]);
 
   return (
-    <div className="main-wrapper">
-      <div className={classNames("fade-in")}>
-        <WordleGame
-          solution={solution}
-          onWin={() => {
-            setWordleWon(true);
-          }}
-        />
-      </div>
+    <div>
+      {wordleLost && (
+        <div className={classNames("fade-in")}>
+          <Grid
+            container
+            direction="column"
+            alignItems="center"
+            justifyContent="center"
+            style={{ height: "100vh" }}
+            textAlign="center"
+          >
+            <button onClick={restartGame}>Retry</button>
+          </Grid>
+        </div>
+      )}
+      {!wordleLost && (
+        <div className={classNames("fade-in")}>
+          <WordleGame
+            solution={solution}
+            onWin={() => {
+              setWordleWon(true);
+            }}
+            onLose={() => {
+              setWordleLost(true);
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 };

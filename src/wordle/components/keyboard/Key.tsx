@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 import { REVEAL_TIME_MS } from "../../constants/settings";
 import { CharStatus } from "../../lib/statuses";
