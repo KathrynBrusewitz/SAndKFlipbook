@@ -1,48 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useAppContext } from "../context/AppContext";
-import classNames from "classnames";
+import { Box, Grid } from "@mui/material";
 
 const TitlePage = () => {
-  const { setPageIndex, resetGameState } = useAppContext();
-  const [intro, setIntro] = useState(false);
-  const [exit, setExit] = useState(false);
-
-  useEffect(() => {
-    setIntro(true);
-
-    setTimeout(() => {
-      setIntro(false);
-    }, 2000);
-  }, []);
-
-  function handleKeyEvent(e: KeyboardEvent) {
-    if (e.code === "ArrowRight") {
-      setExit(true);
-
-      // Go to next page after animation finishes
-      setTimeout(() => {
-        setPageIndex(1);
-      }, 2000);
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyEvent);
-    return () => {
-      document.removeEventListener("keydown", handleKeyEvent);
-    };
-  }, [handleKeyEvent]);
+  const { resetGameState } = useAppContext();
 
   return (
-    <div
-      className={classNames("main-wrapper", {
-        "fade-out": exit,
-        "fade-in": intro,
-      })}
+    <Grid
+      container
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
     >
-      <h1>Use the arrow keys to navigate</h1>
-      <button onClick={resetGameState}>Reset</button>
-    </div>
+      <Grid item>
+        <Box pt={20} pb={30}>
+          <h1>Dear Siobhan,</h1>
+        </Box>
+      </Grid>
+      <Grid item>
+        <button onClick={resetGameState}>Reset</button>
+      </Grid>
+    </Grid>
   );
 };
 
