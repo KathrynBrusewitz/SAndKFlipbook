@@ -6,6 +6,7 @@ import { Box, Grid } from "@mui/material";
 import Green from "./pages/components/Green";
 import PuzzlePage from "./pages/PuzzlePage";
 import { saveCurrentPage, Solutions } from "./context/GameStateStorage";
+import WorkLaptop from "./assets/WorkingAtDesk.png";
 
 function App() {
   const { pageIndex } = useAppContext();
@@ -21,7 +22,7 @@ function App() {
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
-          [me drawing, her reading, cats lounging]
+          <img src={WorkLaptop} />
         </Grid>
         <Grid item xs={6}>
           <p>
