@@ -7,6 +7,7 @@ import Green from "./pages/components/Green";
 import PuzzlePage from "./pages/PuzzlePage";
 import { saveCurrentPage, Solutions } from "./context/GameStateStorage";
 import WorkLaptop from "./assets/WorkingAtDesk.png";
+import Subway from "./assets/Subway.png";
 
 function App() {
   const { pageIndex } = useAppContext();
@@ -35,7 +36,7 @@ function App() {
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
-          [both of us sitting on the subway, looking at phone]
+          <img src={Subway} />
         </Grid>
         <Grid item xs={6}>
           <p>
@@ -43,11 +44,6 @@ function App() {
             pass the time or first thing upon waking up in the morning, so I
             included a few for you to solve as you flip through.
           </p>
-        </Grid>
-        <Grid item xs={6} textAlign="center">
-          [phone with wordle]
-        </Grid>
-        <Grid item xs={6}>
           <p>
             Maybe you can guess where I am going to <Green>start</Green>...
           </p>
