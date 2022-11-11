@@ -10,6 +10,7 @@ import WorkLaptop from "./assets/WorkingAtDesk---Animated.gif";
 import Subway from "./assets/Subway---Animated.gif";
 import Match from "./assets/Match.png";
 import Facetime from "./assets/Facetime.png";
+import MapAndTickets from "./assets/MapAndTickets.png";
 
 function App() {
   const { pageIndex } = useAppContext();
@@ -87,7 +88,7 @@ function App() {
           </p>
         </Grid>
         <Grid item xs={6} textAlign="center">
-          [US map with trip lines, or boarding tickets]
+          <img src={MapAndTickets} />
         </Grid>
         <Grid item xs={6}>
           <p>
