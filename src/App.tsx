@@ -6,8 +6,10 @@ import { Box, Grid } from "@mui/material";
 import Green from "./pages/components/Green";
 import PuzzlePage from "./pages/PuzzlePage";
 import { saveCurrentPage, Solutions } from "./context/GameStateStorage";
-import WorkLaptop from "./assets/WorkingAtDesk.png";
-import Subway from "./assets/Subway.png";
+import WorkLaptop from "./assets/WorkingAtDesk---Animated.gif";
+import Subway from "./assets/Subway---Animated.gif";
+import Match from "./assets/Match.png";
+import Facetime from "./assets/Facetime.png";
 
 function App() {
   const { pageIndex } = useAppContext();
@@ -54,7 +56,7 @@ function App() {
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
-          [our phones with our profiles]
+          <img src={Match} />
         </Grid>
         <Grid item xs={6}>
           <p>
@@ -75,7 +77,7 @@ function App() {
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
-          [facetiming in our apartments]
+          <img src={Facetime} />
         </Grid>
         <Grid item xs={6}>
           <p>
