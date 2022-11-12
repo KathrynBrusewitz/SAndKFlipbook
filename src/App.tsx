@@ -28,11 +28,11 @@ function App() {
       <TitlePage />
     </PageContainer>,
     <PageContainer>
-      <Grid container alignItems="center">
-        <Grid item xs={6} textAlign="center">
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item xs={12} md={6} textAlign="center">
           <img src={WorkLaptop} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <p>
             I had this idea of illustrating our story together so far. It’s a
             little flipbook of memories that I have of us.
@@ -41,11 +41,11 @@ function App() {
       </Grid>
     </PageContainer>,
     <PageContainer>
-      <Grid container alignItems="center">
-        <Grid item xs={6} textAlign="center">
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item xs={12} md={6} textAlign="center">
           <img src={Subway} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <p>
             I know how much you enjoy wordles, whether it’s on the subway to
             pass the time or first thing upon waking up in the morning, so I
@@ -59,11 +59,11 @@ function App() {
     </PageContainer>,
     <PuzzlePage solution={Solutions[0]} />,
     <PageContainer>
-      <Grid container alignItems="center">
-        <Grid item xs={6} textAlign="center">
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item xs={12} md={6} textAlign="center">
           <img src={Match} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <p>
             In this city of over 18 million people, I find it remarkable how we
             found each other. After a long time spent isolated in my Seattle
@@ -80,42 +80,42 @@ function App() {
     </PageContainer>,
     <PuzzlePage solution={Solutions[1]} />,
     <PageContainer>
-      <Grid container alignItems="center">
-        <Grid item xs={6} textAlign="center">
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item xs={12} md={6} textAlign="center">
           <img src={Facetime} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <p>
             Our very first date actually happened 2400 miles apart. Six hours
             here, eight hours there. Not a day passed where we didn’t talk about
             anything and everything over the <Green>phone</Green>.
           </p>
         </Grid>
-        <Grid item xs={6} textAlign="center">
-          <img src={MapAndTickets} />
-        </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={7} textAlign="right">
           <p>
             It didn’t take long for me to book another ticket, becoming the
             first of many. Every visit was worth the six hour red eyes, but I am
             so glad we no longer have to do that anymore.
           </p>
         </Grid>
+        <Grid item xs={12} md={5} textAlign="center">
+          <Box maxWidth={450}>
+            <img src={MapAndTickets} style={{ margin: "0px auto" }} />
+          </Box>
+        </Grid>
       </Grid>
     </PageContainer>,
     <PuzzlePage solution={Solutions[2]} />,
     <PageContainer>
-      <Grid container alignItems="center">
-        <Grid item xs={6} textAlign="center">
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item xs={12} md={5} textAlign="center">
           <Grid container direction="column">
             <Grid item>
               <img src={Tacos} />
             </Grid>
-            {/* <Grid item>[us walking in the city]</Grid>
-            <Grid item>[cloisters]</Grid> */}
           </Grid>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={7}>
           <p>
             On a crisp, autumn day in New York, we went on our first date
             together walking the bustling streets. You took me to your most
@@ -128,15 +128,15 @@ function App() {
     </PageContainer>,
     <PuzzlePage solution={Solutions[3]} />,
     <PageContainer>
-      <Grid container alignItems="center">
-        <Grid item xs={6} textAlign="center">
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item xs={12} md={5} textAlign="center">
           <Grid container direction="column">
             <Grid item>
               <img src={Latte} />
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={7}>
           <p>
             We never go without grabbing a morning <Green>latte</Green> and a
             freshly baked pastry together. It’s my favorite cozy, daily ritual
@@ -149,17 +149,16 @@ function App() {
     </PageContainer>,
     <PuzzlePage solution={Solutions[4]} />,
     <PageContainer>
-      <Grid container alignItems="center">
-        <Grid item xs={6} textAlign="center">
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item xs={12} md={6} textAlign="center">
           <img src={World} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <p>
             Sometimes we are able to venture out of the city. We’ve climbed the
             snow-packed, evergreen mountains in the Pacific Northwest, hiked
-            through the beautiful hills of the Northeast, tinged with golden
-            yellows and deep reds, and even braved the waves of the Atlantic
-            ocean.
+            through the beautiful golden and red hills of the Northeast, and
+            waded the cold shores of the Atlantic.
           </p>
           <p>
             I can’t wait to travel the <Green>world</Green> with you and enjoy

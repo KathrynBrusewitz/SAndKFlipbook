@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import WordleGame from "../wordle/WordleGame";
 import classNames from "classnames";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import RestartButton from "../assets/RestartButton.png";
 
 interface PuzzlePageProps {
@@ -51,7 +51,9 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
             textAlign="center"
           >
             <button onClick={restartGame}>
-              <img src={RestartButton} />
+              <Box maxWidth={140}>
+                <img src={RestartButton} />
+              </Box>
             </button>
           </Grid>
         </div>

@@ -32,7 +32,7 @@ const PageContainer = (props: React.PropsWithChildren<PageContainerProps>) => {
   }, [handleKeyEvent]);
 
   return (
-    <Box p={4} className="fade-in">
+    <Box p={4} pt={10} className="fade-in">
       {props.children}
     </Box>
   );
