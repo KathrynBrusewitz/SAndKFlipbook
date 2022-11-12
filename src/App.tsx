@@ -11,6 +11,7 @@ import Subway from "./assets/Subway---Animated.gif";
 import Match from "./assets/Match.png";
 import Facetime from "./assets/Facetime.png";
 import MapAndTickets from "./assets/MapAndTickets.png";
+import Tacos from "./assets/Tacos.png";
 
 function App() {
   const { pageIndex } = useAppContext();
@@ -104,9 +105,11 @@ function App() {
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
           <Grid container direction="column">
-            <Grid item>[tacos at tacombi’s]</Grid>
-            <Grid item>[us walking in the city]</Grid>
-            <Grid item>[cloisters]</Grid>
+            <Grid item>
+              <img src={Tacos} />
+            </Grid>
+            {/* <Grid item>[us walking in the city]</Grid>
+            <Grid item>[cloisters]</Grid> */}
           </Grid>
         </Grid>
         <Grid item xs={6}>
