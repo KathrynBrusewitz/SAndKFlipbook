@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
 import { useAppContext } from "../context/AppContext";
+import Title from "../assets/Title---Animated.gif";
 
 const TitlePage = () => {
   const { resetGameState, gameStateExists } = useAppContext();
@@ -13,8 +14,8 @@ const TitlePage = () => {
       justifyContent="center"
     >
       <Grid item>
-        <Box pt={20} pb={30}>
-          <h1>Dear Siobhan,</h1>
+        <Box maxWidth={800}>
+          <img src={Title} />
         </Box>
       </Grid>
       {gameStateExists && (

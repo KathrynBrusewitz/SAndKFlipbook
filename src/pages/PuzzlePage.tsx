@@ -3,6 +3,7 @@ import { useAppContext } from "../context/AppContext";
 import WordleGame from "../wordle/WordleGame";
 import classNames from "classnames";
 import { Grid } from "@mui/material";
+import RestartButton from "../assets/RestartButton.png";
 
 interface PuzzlePageProps {
   solution: string;
@@ -49,7 +50,9 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
             style={{ height: "100vh" }}
             textAlign="center"
           >
-            <button onClick={restartGame}>Retry</button>
+            <button onClick={restartGame}>
+              <img src={RestartButton} />
+            </button>
           </Grid>
         </div>
       )}

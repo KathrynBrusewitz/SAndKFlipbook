@@ -12,6 +12,9 @@ import Match from "./assets/Match.png";
 import Facetime from "./assets/Facetime.png";
 import MapAndTickets from "./assets/MapAndTickets.png";
 import Tacos from "./assets/Tacos.png";
+import Ring from "./assets/Ring.png";
+import World from "./assets/World.png";
+import Latte from "./assets/Latte.png";
 
 function App() {
   const { pageIndex } = useAppContext();
@@ -128,9 +131,8 @@ function App() {
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
           <Grid container direction="column">
-            <Grid item>[drinking coffee at a table]</Grid>
             <Grid item>
-              [sitting in the park, reading books, drinking coffee]
+              <img src={Latte} />
             </Grid>
           </Grid>
         </Grid>
@@ -149,7 +151,7 @@ function App() {
     <PageContainer>
       <Grid container alignItems="center">
         <Grid item xs={6} textAlign="center">
-          [world map, with stickies and photos, like our miro board]
+          <img src={World} />
         </Grid>
         <Grid item xs={6}>
           <p>
@@ -170,15 +172,10 @@ function App() {
     <PageContainer lastPage>
       <Grid container direction="column" alignItems="center">
         <Grid item textAlign="center">
-          <Box pt={30}>
-            <h1>
-              Will you <Green>marry</Green> me?
-            </h1>
+          <Box pt={10} maxWidth={800}>
+            <img src={Ring} />
           </Box>
         </Grid>
-      </Grid>
-      <Grid item textAlign="center">
-        [ring in wooden box]
       </Grid>
     </PageContainer>,
   ];
