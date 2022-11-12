@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+#/build TODO: add github workflow and deploy the build from there instead
 
 # misc
 .DS_Store
