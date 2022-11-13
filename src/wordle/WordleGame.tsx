@@ -2,7 +2,6 @@ import "./WordleGame.css";
 
 import { default as GraphemeSplitter } from "grapheme-splitter";
 import React, { useEffect, useState } from "react";
-import Div100vh from "react-div-100vh";
 
 import { AlertContainer } from "./components/alerts/AlertContainer";
 import { Grid } from "./components/grid/Grid";

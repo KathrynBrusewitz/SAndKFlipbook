@@ -1,7 +1,6 @@
 import React from "react";
 import { useAppContext } from "../context/AppContext";
 import { Box, Grid } from "@mui/material";
-import Div100vh from "react-div-100vh";
 
 interface ArrowsProps {
   firstPage?: boolean;
