@@ -21,7 +21,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install and build
-        working-directory: /
         run: |
           npm ci
           npm run build
