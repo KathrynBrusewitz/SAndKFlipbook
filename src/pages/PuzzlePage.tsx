@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { Box, Grid } from "@mui/material";
 import RestartButton from "../assets/RestartButton.png";
 import { Solutions } from "../context/GameStateStorage";
+import PurpleBackground from "../assets/PurpleBackground.png";
 
 const PuzzleArrows = () => {
   const { pageIndex, setPageIndex } = useAppContext();
@@ -21,13 +22,13 @@ const PuzzleArrows = () => {
     <Grid container wrap="nowrap" justifyContent="space-between">
       <Grid item>
         <button onClick={goLeft}>
-          <Box fontSize={80} px={2} color="#444">{`<`}</Box>
+          <Box fontSize={80} px={2} color="#f2f2f2">{`<`}</Box>
         </button>
       </Grid>
 
       <Grid item>
         <button onClick={goRight}>
-          <Box fontSize={80} px={2} color="#444">{`>`}</Box>
+          <Box fontSize={80} px={2} color="#f2f2f2">{`>`}</Box>
         </button>
       </Grid>
     </Grid>
@@ -74,41 +75,57 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
 
   return (
     <>
-      <Box className={classNames("fade-in")} pt={4} pb={6} textAlign="center">
-        {puzzleNumberText()}
+      <Box
+        style={{
+          backgroundImage: `url(${PurpleBackground})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          height: "100vh",
+        }}
+      >
+        <Box
+          className={classNames("fade-in")}
+          pt={4}
+          pb={6}
+          textAlign="center"
+          color="#f2f2f2"
+        >
+          {puzzleNumberText()}
+        </Box>
+        {wordleLost && (
+          <div className={classNames("fade-in")}>
+            <Grid
+              container
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+              style={{ height: "100vh" }}
+              textAlign="center"
+            >
+              <button onClick={restartGame}>
+                <Box maxWidth={140}>
+                  <img src={RestartButton} />
+                </Box>
+              </button>
+            </Grid>
+          </div>
+        )}
+        {!wordleLost && (
+          <div className={classNames("fade-in")}>
+            <WordleGame
+              solution={solution}
+              onWin={() => {
+                setWordleWon(true);
+              }}
+              onLose={() => {
+                setWordleLost(true);
+              }}
+            />
+          </div>
+        )}
+        <PuzzleArrows />
       </Box>
-      {wordleLost && (
-        <div className={classNames("fade-in")}>
-          <Grid
-            container
-            direction="column"
-            alignItems="center"
-            justifyContent="center"
-            style={{ height: "100vh" }}
-            textAlign="center"
-          >
-            <button onClick={restartGame}>
-              <Box maxWidth={140}>
-                <img src={RestartButton} />
-              </Box>
-            </button>
-          </Grid>
-        </div>
-      )}
-      {!wordleLost && (
-        <div className={classNames("fade-in")}>
-          <WordleGame
-            solution={solution}
-            onWin={() => {
-              setWordleWon(true);
-            }}
-            onLose={() => {
-              setWordleLost(true);
-            }}
-          />
-        </div>
-      )}
-      <PuzzleArrows />
     </>
   );
 };
