@@ -4,6 +4,35 @@ import WordleGame from "../wordle/WordleGame";
 import classNames from "classnames";
 import { Box, Grid } from "@mui/material";
 import RestartButton from "../assets/RestartButton.png";
+import { Solutions } from "../context/GameStateStorage";
+
+const PuzzleArrows = () => {
+  const { pageIndex, setPageIndex } = useAppContext();
+
+  function goLeft(): void {
+    setPageIndex(pageIndex - 1);
+  }
+
+  function goRight(): void {
+    setPageIndex(pageIndex + 1);
+  }
+
+  return (
+    <Grid container wrap="nowrap" justifyContent="space-between">
+      <Grid item>
+        <button onClick={goLeft}>
+          <Box fontSize={80} px={2} color="#444">{`<`}</Box>
+        </button>
+      </Grid>
+
+      <Grid item>
+        <button onClick={goRight}>
+          <Box fontSize={80} px={2} color="#444">{`>`}</Box>
+        </button>
+      </Grid>
+    </Grid>
+  );
+};
 
 interface PuzzlePageProps {
   solution: string;
@@ -13,6 +42,11 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
   const { pageIndex, setPageIndex } = useAppContext();
   const [wordleWon, setWordleWon] = useState(false);
   const [wordleLost, setWordleLost] = useState(false);
+
+  function puzzleNumberText(): string {
+    const solutionIndex = Solutions.indexOf(solution);
+    return `${solutionIndex + 1} out of ${Solutions.length}`;
+  }
 
   function restartGame() {
     localStorage.removeItem(solution);
@@ -39,7 +73,10 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
   }, [handleKeyEvent]);
 
   return (
-    <div>
+    <>
+      <Box className={classNames("fade-in")} pt={4} pb={6} textAlign="center">
+        {puzzleNumberText()}
+      </Box>
       {wordleLost && (
         <div className={classNames("fade-in")}>
           <Grid
@@ -71,7 +108,8 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
           />
         </div>
       )}
-    </div>
+      <PuzzleArrows />
+    </>
   );
 };
 
