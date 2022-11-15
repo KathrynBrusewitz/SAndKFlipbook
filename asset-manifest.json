@@ -1,25 +1,26 @@
 {
   "files": {
     "main.css": "/static/css/main.6ece0229.css",
-    "main.js": "/static/js/main.b1b81781.js",
+    "main.js": "/static/js/main.50aaa276.js",
     "static/media/Facetime.png": "/static/media/Facetime.e81dad21ededa9f290b7.png",
     "static/media/World.png": "/static/media/World.2ecc22dd408e57450228.png",
-    "static/media/PurpleBackground.png": "/static/media/PurpleBackground.143ae61918fe7212c7d2.png",
     "static/media/Latte.png": "/static/media/Latte.b6079a6b81e053ba665d.png",
     "static/media/Ring.png": "/static/media/Ring.f65121e65192185f9b4c.png",
     "static/media/Tacos.png": "/static/media/Tacos.4ca6ae0dcf09ea4b08f8.png",
     "static/media/Subway---Animated.gif": "/static/media/Subway---Animated.5eafff5ed2bbc67e7f8a.gif",
     "static/media/Match.png": "/static/media/Match.8857d56c5b69fd0125d9.png",
     "static/media/MapAndTickets.png": "/static/media/MapAndTickets.6ed010fc5b483fed0c14.png",
+    "static/media/PurpleBackground.jpg": "/static/media/PurpleBackground.ddb845adb29dddca5f2a.jpg",
+    "static/media/BlueBackground.jpg": "/static/media/BlueBackground.88ad5911d1b15a36deb2.jpg",
     "static/media/WorkingAtDesk---Animated.gif": "/static/media/WorkingAtDesk---Animated.2d2947a4bfd1826edb39.gif",
     "static/media/Title---Animated.gif": "/static/media/Title---Animated.2c36eb662c856c2169e0.gif",
     "static/media/RestartButton.png": "/static/media/RestartButton.83f6c844b61da2eb9f71.png",
     "index.html": "/index.html",
     "main.6ece0229.css.map": "/static/css/main.6ece0229.css.map",
-    "main.b1b81781.js.map": "/static/js/main.b1b81781.js.map"
+    "main.50aaa276.js.map": "/static/js/main.50aaa276.js.map"
   },
   "entrypoints": [
     "static/css/main.6ece0229.css",
-    "static/js/main.b1b81781.js"
+    "static/js/main.50aaa276.js"
   ]
 }
