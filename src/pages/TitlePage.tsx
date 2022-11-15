@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Grid } from "@mui/material";
 import { useAppContext } from "../context/AppContext";
 import Title from "../assets/Title---Animated.gif";
+import TitleBackground from "../assets/TitleBackground.png";
 
 const TitlePage = () => {
   const { resetGameState, gameStateExists } = useAppContext();
@@ -15,7 +16,7 @@ const TitlePage = () => {
     >
       <Grid item>
         <Box maxWidth={800}>
-          <img src={Title} />
+          <img src={TitleBackground} />
         </Box>
       </Grid>
       {gameStateExists && (

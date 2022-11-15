@@ -7,6 +7,7 @@ import RestartButton from "../assets/RestartButton.png";
 import { Solutions } from "../context/GameStateStorage";
 import PurpleBackground from "../assets/PurpleBackground.jpg";
 import BlueBackground from "../assets/BlueBackground.jpg";
+import CobbleStoneBackground from "../assets/CobbleStoneBackground.jpg";
 
 const PuzzleArrows = () => {
   const { pageIndex, setPageIndex } = useAppContext();
@@ -74,14 +75,22 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
     };
   }, [handleKeyEvent]);
 
-  const backgroundImage =
-    Solutions.indexOf(solution) % 2 === 0 ? PurpleBackground : BlueBackground;
+  function getBackgroundImage(): string {
+    const solutionIndex = Solutions.indexOf(solution);
+    if (solutionIndex <= 0 || solutionIndex === 3) {
+      return PurpleBackground;
+    }
+    if (solutionIndex === 1 || solutionIndex === 4) {
+      return BlueBackground;
+    }
+    return CobbleStoneBackground;
+  }
 
   return (
     <>
       <Box
         style={{
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `url(${getBackgroundImage()})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
