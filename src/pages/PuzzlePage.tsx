@@ -5,7 +5,8 @@ import classNames from "classnames";
 import { Box, Grid } from "@mui/material";
 import RestartButton from "../assets/RestartButton.png";
 import { Solutions } from "../context/GameStateStorage";
-import PurpleBackground from "../assets/PurpleBackground.png";
+import PurpleBackground from "../assets/PurpleBackground.jpg";
+import BlueBackground from "../assets/BlueBackground.jpg";
 
 const PuzzleArrows = () => {
   const { pageIndex, setPageIndex } = useAppContext();
@@ -73,11 +74,14 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
     };
   }, [handleKeyEvent]);
 
+  const backgroundImage =
+    Solutions.indexOf(solution) % 2 === 0 ? PurpleBackground : BlueBackground;
+
   return (
     <>
       <Box
         style={{
-          backgroundImage: `url(${PurpleBackground})`,
+          backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
