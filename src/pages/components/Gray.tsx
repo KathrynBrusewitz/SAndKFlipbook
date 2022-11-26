@@ -2,15 +2,15 @@ interface Props {
   children: string;
 }
 
-const Green = ({ children }: Props) => {
+const Gray = ({ children }: Props) => {
   const cList = children.split("").map((child) => (
     <span
       style={{
         color: "white",
-        backgroundColor: "#48bb78",
+        backgroundColor: "#94a3b8",
         padding: "0px 8px",
         margin: "0px 1px",
-        border: "1px solid #48bb78",
+        border: "1px solid #94a3b8",
         borderRadius: 8,
         textTransform: "uppercase",
         fontSize: "large",
@@ -22,4 +22,4 @@ const Green = ({ children }: Props) => {
   return <span>{cList}</span>;
 };
 
-export default Green;
+export default Gray;

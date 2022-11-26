@@ -17,6 +17,8 @@ import World from "./assets/World.png";
 import Latte from "./assets/Latte.png";
 import Arrows from "./pages/Arrows";
 import Cloisters from "./assets/Cloisters.png";
+import Yellow from "./pages/components/Yellow";
+import Gray from "./pages/components/Gray";
 
 function App() {
   const { pageIndex } = useAppContext();
@@ -44,8 +46,8 @@ function App() {
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
-              I had this idea of illustrating our story together so far. It’s a
-              little flipbook of memories that I have of us.
+              I wanted to illustrate our story together so far. This is a little
+              digital flip book of memories that I have of us.
             </p>
           </Grid>
         </Grid>
@@ -59,13 +61,18 @@ function App() {
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
-              I know how much you enjoy wordles, whether it’s on the{" "}
-              <Green>train</Green> to pass the time or first thing upon waking
-              up in the morning, so I included a few for you to solve as you
-              flip through.
+              I remember when you first showed me wordles, and then we kept
+              sharing them with each other every day. Sometimes we'd solve them
+              on the <Yellow>t</Yellow>
+              <Gray>r</Gray>
+              <Yellow>a</Yellow>
+              <Gray>in</Gray> together to pass the time or do them first thing
+              in the morning.
             </p>
             <p>
-              Maybe you can guess where I am going to <Green>start</Green>...
+              For the first puzzle, how did we <Gray>s</Gray>
+              <Yellow>ta</Yellow>
+              <Gray>rt</Gray>?
             </p>
           </Grid>
         </Grid>
