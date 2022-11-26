@@ -94,7 +94,7 @@ const PuzzlePage = ({ solution }: PuzzlePageProps) => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          height: "100vh",
+          minHeight: "100vh",
         }}
       >
         <Box
