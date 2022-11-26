@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
 import { useAppContext } from "../context/AppContext";
-import TitleBackground from "../assets/TitleBackground.png";
+import TitleBackground from "../assets/TitleBackground---Animated.gif";
 
 const TitlePage = () => {
   const { resetGameState, gameStateExists } = useAppContext();

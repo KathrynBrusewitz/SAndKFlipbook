@@ -16,6 +16,7 @@ import Ring from "./assets/Ring.png";
 import World from "./assets/World.png";
 import Latte from "./assets/Latte.png";
 import Arrows from "./pages/Arrows";
+import Cloisters from "./assets/Cloisters.png";
 
 function App() {
   const { pageIndex } = useAppContext();
@@ -141,6 +142,22 @@ function App() {
               favorite place for <Green>tacos</Green> in the upper west side. We
               were both so nervous, but eventually I worked up the courage to
               ask if I could hold your hand.
+            </p>
+          </Grid>
+
+          <Grid item xs={12} md={5} textAlign="center">
+            <Grid container direction="column">
+              <Grid item>
+                <img src={Cloisters} />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <p>
+              The next day, you took me to another favorite place of yours - the
+              Cloisters. I loved walking around the beautiful garden in the
+              monastery with you, pointing out plants and herbs, and seeing the
+              unicorn tapestries.
             </p>
           </Grid>
         </Grid>
