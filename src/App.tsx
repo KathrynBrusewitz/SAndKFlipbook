@@ -59,9 +59,10 @@ function App() {
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
-              I know how much you enjoy wordles, whether it’s on the subway to
-              pass the time or first thing upon waking up in the morning, so I
-              included a few for you to solve as you flip through.
+              I know how much you enjoy wordles, whether it’s on the{" "}
+              <Green>train</Green> to pass the time or first thing upon waking
+              up in the morning, so I included a few for you to solve as you
+              flip through.
             </p>
             <p>
               Maybe you can guess where I am going to <Green>start</Green>...
