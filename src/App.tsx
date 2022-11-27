@@ -12,7 +12,7 @@ import Match from "./assets/Match.png";
 import Facetime from "./assets/Facetime.png";
 import MapAndTickets from "./assets/MapAndTickets.png";
 import Tacos from "./assets/Tacos.png";
-import Ring from "./assets/Ring.png";
+import Ring from "./assets/HoldingHandsRing.png";
 import World from "./assets/World.png";
 import Latte from "./assets/Latte.png";
 import Arrows from "./pages/Arrows";
@@ -21,7 +21,7 @@ import Yellow from "./pages/components/Yellow";
 import Gray from "./pages/components/Gray";
 
 function App() {
-  const { pageIndex } = useAppContext();
+  const { pageIndex, setPageIndex } = useAppContext();
 
   useEffect(() => {
     saveCurrentPage(pageIndex);
@@ -242,24 +242,46 @@ function App() {
             </p>
             <p>
               I can’t wait to travel the <Green>world</Green> with you and enjoy
-              many a <Gray>l</Gray>
-              <Green>a</Green>
-              <Gray>tte</Gray> and <Gray>t</Gray>
-              <Yellow>ra</Yellow>
-              <Gray>il</Gray>, and <Gray>books</Gray> together.
+              many lattes, trails, and books together.
             </p>
           </Grid>
         </Grid>
       </PageContainer>
     </Arrows>,
     <PuzzlePage solution={Solutions[5]} />,
-    <Arrows lastPage>
-      <PageContainer lastPage>
+    <Arrows>
+      <PageContainer>
         <Grid container direction="column" alignItems="center">
           <Grid item textAlign="center">
-            <Box pt={10} maxWidth={800}>
+            <Box pt={2} maxWidth={500}>
               <img src={Ring} alt="ring in a box" />
             </Box>
+          </Grid>
+        </Grid>
+      </PageContainer>
+    </Arrows>,
+    <Arrows lastPage>
+      <PageContainer lastPage>
+        <Grid
+          container
+          direction="column"
+          alignItems="center"
+          // height="70vh"
+          // justifyContent="center"
+        >
+          <Grid item textAlign="center">
+            <p>
+              Illustrated and coded by{" "}
+              <a
+                href="https://github.com/KathrynBrusewitz"
+                style={{ color: "#80D540" }}
+              >
+                Kathryn Brusewitz
+              </a>
+            </p>
+          </Grid>
+          <Grid item>
+            <button onClick={() => setPageIndex(0)}>Back to Beginning</button>
           </Grid>
         </Grid>
       </PageContainer>

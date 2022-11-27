@@ -61,18 +61,22 @@ const Arrows = (props: React.PropsWithChildren<ArrowsProps>) => {
           alignItems="center"
         >
           <Grid item>
-            {showLeft() && (
+            {showLeft() ? (
               <button onClick={goLeft}>
                 <Box fontSize={60} px={2} color="#444">{`<`}</Box>
               </button>
+            ) : (
+              <Box fontSize={60} px={2} visibility="hidden">{`<`}</Box>
             )}
           </Grid>
           <Grid item>{props.children}</Grid>
           <Grid item>
-            {showRight() && (
+            {showRight() ? (
               <button onClick={goRight}>
                 <Box fontSize={60} px={2} color="#444">{`>`}</Box>
               </button>
+            ) : (
+              <Box fontSize={60} px={2} visibility="hidden">{`>`}</Box>
             )}
           </Grid>
         </Grid>
