@@ -10,7 +10,7 @@ import WorkLaptop from "./assets/WorkingAtDesk---Animated.gif";
 import Subway from "./assets/Subway---Animated.gif";
 import Match from "./assets/Match.png";
 import Facetime from "./assets/Facetime.png";
-import MapAndTickets from "./assets/MapAndTickets.png";
+import MapAndTickets from "./assets/MapAndTickets.gif";
 import Tacos from "./assets/Tacos.png";
 import Ring from "./assets/HoldingHandsRing.png";
 import World from "./assets/World.png";
