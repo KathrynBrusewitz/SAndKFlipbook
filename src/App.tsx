@@ -9,7 +9,7 @@ import { saveCurrentPage, Solutions } from "./context/GameStateStorage";
 import WorkLaptop from "./assets/WorkingAtDesk---Animated.gif";
 import Subway from "./assets/Subway---Animated.gif";
 import Match from "./assets/Match.png";
-import Facetime from "./assets/Facetime.png";
+import Facetime from "./assets/Facetime---Animated.gif";
 import MapAndTickets from "./assets/MapAndTickets.gif";
 import Tacos from "./assets/Tacos.png";
 import Ring from "./assets/HoldingHandsRing.png";
