@@ -42,7 +42,10 @@ function App() {
       <PageContainer>
         <Grid container alignItems="center" spacing={2}>
           <Grid item xs={12} md={6} textAlign="center">
-            <img src={WorkLaptop} />
+            <img
+              src={WorkLaptop}
+              alt="me coding and drawing at my desk with two cats"
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
@@ -57,13 +60,16 @@ function App() {
       <PageContainer>
         <Grid container alignItems="center" spacing={2}>
           <Grid item xs={12} md={6} textAlign="center">
-            <img src={Subway} />
+            <img
+              src={Subway}
+              alt="sitting on the train and looking at one of our phones together"
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
-              I remember when you first showed me wordles, and then we kept
-              sharing them with each other every day. Sometimes we'd solve them
-              on the <Yellow>t</Yellow>
+              I remember when you first showed me wordles. Then for a long
+              while, we kept up sharing them with each other every day.
+              Sometimes we'd solve them on the <Yellow>t</Yellow>
               <Gray>r</Gray>
               <Yellow>a</Yellow>
               <Gray>in</Gray> together to pass the time or do them first thing
@@ -83,21 +89,27 @@ function App() {
       <PageContainer>
         <Grid container alignItems="center" spacing={2}>
           <Grid item xs={12} md={6} textAlign="center">
-            <img src={Match} />
+            <img
+              src={Match}
+              alt="looking at each others Hinge profiles and matching"
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
               In this city of over 18 million people, I find it remarkable how
               we found each other. After a long time spent isolated in my
               Seattle apartment, I decided to venture across the country for
-              just a week. Not expecting anything, I opened the app. I am so
-              glad I did.
+              only a week. Not expecting anything, I went back on{" "}
+              <Yellow>H</Yellow>
+              <Gray>i</Gray>
+              <Yellow>n</Yellow>
+              <Gray>g</Gray>
+              <Green>e</Green> to see who's out there. I am so happy I did.
             </p>
             <p>
-              I fell for the kindness in your eyes, the honesty in your answers,
-              and the bravery of your ambitions. You have no idea how joyous I
-              was that you took a chance on me and we were a{" "}
-              <Green>match</Green>.
+              I fell for your kind eyes, adventurous spirit and ambitions. You
+              have no idea how joyous I was that you took a chance on me and we
+              were a <Green>match</Green>.
             </p>
           </Grid>
         </Grid>
@@ -108,7 +120,10 @@ function App() {
       <PageContainer>
         <Grid container alignItems="center" spacing={2}>
           <Grid item xs={12} md={6} textAlign="center">
-            <img src={Facetime} />
+            <img
+              src={Facetime}
+              alt="talking to each other on our computers at home"
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
@@ -119,14 +134,20 @@ function App() {
           </Grid>
           <Grid item xs={12} md={7} textAlign="right">
             <p>
-              It didn’t take long for me to book another ticket, becoming the
-              first of many. Every visit was worth the six hour red eyes, but I
-              am so glad we no longer have to do that anymore.
+              It didn’t take long for me to book another <Gray>pl</Gray>
+              <Yellow>a</Yellow>
+              <Gray>ne</Gray> ticket, becoming the first of many. Every visit
+              was worth the six hour red eyes, but I am so glad we no longer
+              have to do that anymore.
             </p>
           </Grid>
           <Grid item xs={12} md={5} textAlign="center">
             <Box maxWidth={450}>
-              <img src={MapAndTickets} style={{ margin: "0px auto" }} />
+              <img
+                src={MapAndTickets}
+                style={{ margin: "0px auto" }}
+                alt="a map of the USA with boarding tickets"
+              />
             </Box>
           </Grid>
         </Grid>
@@ -139,33 +160,37 @@ function App() {
           <Grid item xs={12} md={5} textAlign="center">
             <Grid container direction="column">
               <Grid item>
-                <img src={Tacos} />
+                <img src={Tacos} alt="date with Siobhan and tacos and drinks" />
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12} md={7}>
             <p>
-              On a crisp, autumn day in New York, we went on our first date
-              together walking the bustling streets. You took me to your most
-              favorite place for <Green>tacos</Green> in the upper west side. We
-              were both so nervous, but eventually I worked up the courage to
-              ask if I could hold your hand.
+              On a autumn day in New York (that you loved to describe as
+              "crisp"), we went on our first date together walking the bustling
+              streets. You took me to your most favorite place for{" "}
+              <Green>tacos</Green> in the upper west side. We joke now about how
+              we were both too nervous, but eventually I worked up the courage
+              to ask if I could hold your hand.
             </p>
           </Grid>
 
           <Grid item xs={12} md={5} textAlign="center">
             <Grid container direction="column">
               <Grid item>
-                <img src={Cloisters} />
+                <img src={Cloisters} alt="the Met Cloisters" />
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12} md={7}>
             <p>
-              The next day, you took me to another favorite place of yours - the
-              Cloisters. I loved walking around the beautiful garden in the
-              monastery with you, pointing out plants and herbs, and seeing the
-              unicorn tapestries.
+              The next day, we ventured to another favorite of yours - the
+              Cloisters. I loved walking around the beautiful garden and
+              monastery with you, pointing out a <Gray>p</Gray>
+              <Yellow>la</Yellow>
+              <Gray>n</Gray>
+              <Yellow>t</Yellow> and herb here and there, and seeing the unicorn
+              tapestries.
             </p>
           </Grid>
         </Grid>
@@ -179,17 +204,22 @@ function App() {
           <Grid item xs={12} md={5} textAlign="center">
             <Grid container direction="column">
               <Grid item>
-                <img src={Latte} />
+                <img
+                  src={Latte}
+                  alt="walking together in the city holding lattes"
+                />
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12} md={7}>
             <p>
               We never go without grabbing a morning <Green>latte</Green> and a
-              freshly baked pastry together. It’s my favorite cozy, daily ritual
-              with you. Sometimes we’d go to the park with books we’ve collected
-              along the way, enjoying each other’s company while being in our
-              own little worlds.
+              freshly baked pastry. It’s my favorite cozy, daily ritual with you
+              (besides cuddling the cats). In the summer, we’d go to the park
+              with <Gray>b</Gray>
+              <Green>o</Green>
+              <Gray>oks</Gray> we’ve collected along the way, enjoying each
+              other’s company while being in our own little worlds.
             </p>
           </Grid>
         </Grid>
@@ -201,18 +231,22 @@ function App() {
       <PageContainer>
         <Grid container alignItems="center" spacing={2}>
           <Grid item xs={12} md={6} textAlign="center">
-            <img src={World} />
+            <img src={World} alt="map of the world with countries circled" />
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
               Sometimes we are able to venture out of the city. We’ve climbed
               the snow-packed, evergreen mountains in the Pacific Northwest,
               hiked through the beautiful golden and red hills of the Northeast,
-              and waded the cold shores of the Atlantic.
+              and waded the chilly Atlantic shores.
             </p>
             <p>
               I can’t wait to travel the <Green>world</Green> with you and enjoy
-              many more lattes, books, and trails together.
+              many a <Gray>l</Gray>
+              <Green>a</Green>
+              <Gray>tte</Gray> and <Gray>t</Gray>
+              <Yellow>ra</Yellow>
+              <Gray>il</Gray>, and <Gray>books</Gray> together.
             </p>
           </Grid>
         </Grid>
@@ -224,7 +258,7 @@ function App() {
         <Grid container direction="column" alignItems="center">
           <Grid item textAlign="center">
             <Box pt={10} maxWidth={800}>
-              <img src={Ring} />
+              <img src={Ring} alt="ring in a box" />
             </Box>
           </Grid>
         </Grid>
